@@ -32,4 +32,16 @@ module.exports = function () {
                 stream: true
             }));
     });
+    $.gulp.task('js:build', () => {
+        return $.gulp.src([scriptsPATH.input + '**/*.js',
+            '!' + scriptsPATH.input + 'libs.min.js'])
+            .pipe(babel({
+                presets: ['@babel/env']
+            }))
+            .pipe($.gulp.dest(scriptsPATH.output_live))
+            .pipe($.browserSync.reload({
+                stream: true
+            }));
+    });
+
 };
