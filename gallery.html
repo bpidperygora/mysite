@@ -1,0 +1,71 @@
+
+<link rel="stylesheet" type="text/css" href="static/css/gallery/gallery.min.css"/><!DOCTYPE html>
+<html lang="ru-RU">
+  <head>
+    <meta charset="utf-8">
+    <title>Gallery</title><!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="IE = edge"><![endif]-->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" type="text/css" href="static/css/styles.min.css"><!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script><![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header"></header>
+      <div class="content">
+        <div class="my-container" id="task1">
+          <div class="light_g"><img class="main_light_g_img" src="" alt=""></div>
+          <div class="hidden control_items">
+            <div class="light_g_close"><span>Esc</span></div>
+            <div class="light_g_arrow next_arrow"></div>
+            <div class="light_g_arrow prev_arrow"></div>
+          </div>
+          <div class="height my-work-row">
+            <div class="task_title accordion_container accordion_block">
+              <ul class="accordion">
+                <li><a class="accordion_trigger">About Gallery Task</a>
+                  <p class="accordion_content">- Simple gallery<br>- On img click must open gallery with control<br>- Possibility to select IMG size<br>- On click &apos;Select&apos; button:<br><span></span>- Select IMG<br><span></span>- Add overlay on IMG with check icon<br><span></span>- IMG Change size.<br><span></span>- Change Select to Clear ( on click Clear cancel all )<br>- On click &apos;Change&apos; button: (Select must be active)<br><span></span>- Change all selected img ( based on the selected image size )<br>-Add possibility to change IMGs amount when swipe range.</p>
+                </li>
+              </ul>
+            </div>
+            <div class="set_img_size input_field">
+              <div class="input_field_col simple_select">
+                <label for="select_img_size">Select img size</label>
+                <select id="select_img_size" name="img_size">
+                  <option value="300">300</option>
+                  <option value="400">400</option>
+                  <option value="500">500</option>
+                  <option value="600">600</option>
+                  <option value="700">700</option>
+                </select>
+              </div>
+              <div class="input_field_col range_select">
+                <label for="select_img_amount">Select img amount</label>
+                <input id="select_img_amount" type="range" name="range" value="6" min="6" max="60" step="1">
+                <output id="rangeValue"></output>
+              </div>
+            </div>
+            <div class="click_items">
+              <div class="click_item">
+                <div class="click_item_content rounded"><img class="my_click" src="" alt="Some Random IMG"></div>
+              </div>
+            </div>
+            <div class="selected_items">
+              <p>Selected Items:<span class="items_count"></span></p>
+            </div>
+            <div class="buttons">
+              <button class="select_buttons">Select</button>
+              <button class="change">Change</button>
+            </div>
+          </div>
+        </div>
+        <script src="static/js/components/gallery/gallery.js"></script>
+      </div>
+      <footer class="footer"></footer>
+    </div>
+    <script src="static/js/jquery-3.3.1.min.js"></script>
+    <script src="static/js/libs.min.js"></script>
+    <script src="static/js/main.js"></script>
+  </body>
+</html>
