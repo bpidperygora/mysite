@@ -1,0 +1,217 @@
+#task1 {
+  &.now_selected .click_item {
+    padding: 5px 20px !important;
+  }
+
+  &.active {
+    &:before {
+      content: '';
+      width: 100%;
+      height: 100%;
+      z-index: 9999;
+      position: fixed;
+      background: black;
+      opacity: .95;
+    }
+
+    .light_g {
+      display: block;
+      position: fixed !important;
+      width: auto !important;
+      min-height: auto !important;
+      z-index: 9999;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .control_items {
+      display: block;
+
+      .light_g_close {
+        position: fixed;
+        display: inline-block;
+        width: 35px;
+        height: 35px;
+        top: 5%;
+        right: 5%;
+        z-index: 9999;
+        opacity: .6;
+        transition: .2s;
+
+        span {
+          color: #ffffff;
+          position: absolute;
+          bottom: -17px;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+
+        &:hover {
+          opacity: 1;
+
+          span {
+            color: orange;
+          }
+
+          &:before, &:after {
+            background: orange;
+          }
+        }
+
+        &:before, &:after {
+          content: '';
+          position: absolute;
+          width: 100%;
+          top: 50%;
+          left: 0;
+          background: #ffffff;
+          height: 2px;
+          margin-top: -2px;
+        }
+
+        &:before {
+          -webkit-transform: rotate(45deg);
+          -moz-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          -o-transform: rotate(45deg);
+          transform: rotate(45deg);
+        }
+
+        &:after {
+          -webkit-transform: rotate(-45deg);
+          -moz-transform: rotate(-45deg);
+          -ms-transform: rotate(-45deg);
+          -o-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+        }
+      }
+
+      .light_g_arrow {
+        position: fixed;
+        z-index: 99999;
+        top: 50%;
+        width: 25px;
+        height: 25px;
+        opacity: .6;
+        border-right: 2px solid #ffffff;
+        border-bottom: 2px solid #ffffff;
+        cursor: pointer;
+
+        &:hover {
+          opacity: 1;
+          border-color: orange !important;
+        }
+      }
+
+      .prev_arrow {
+        transform: translateY(-50%) rotate(-225deg);
+        left: 5%;
+      }
+
+      .next_arrow {
+        transform: translateY(-50%) rotate(-45deg);
+        right: 5%;
+      }
+    }
+
+    .click_item_content {
+      cursor: default;
+    }
+  }
+
+  .light_g {
+    display: none;
+  }
+
+  .click_items {
+    max-width: 1140px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+    .click_item {
+      width: 33.3%;
+      margin: 10px 0;
+      position: relative;
+      height: 200px;
+      padding: 0 15px;
+      transition: .2s;
+
+      .click_item_content {
+        display: block;
+        position: relative;
+        height: 100%;
+        overflow: hidden;
+        transition: all .4s ease-in;
+        box-shadow: 0 1px 3px 2px rgba(0, 0, 0, 0.08);
+
+        &.selected {
+          &:before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: orange;
+            opacity: 0.5;
+            z-index: 1;
+          }
+
+          &:after {
+            content: '\2713';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            font-size: 3rem;
+            color: white;
+          }
+        }
+      }
+
+      .my_click {
+        width: 100%;
+        min-height: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+
+  .set_img_size {
+    margin-bottom: 30px;
+  }
+
+  .selected_items {
+    display: block;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+
+    p {
+      font-size: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #task1 .click_items {
+    justify-content: space-between;
+
+    .click_item {
+      width: 49%;
+      padding: 0;
+      height: 119px;
+    }
+  }
+}
+
+.light_g_close, .light_g_arrow, .control_items span, .click_item_content {
+  cursor: pointer;
+}

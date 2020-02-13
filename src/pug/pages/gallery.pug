@@ -1,0 +1,72 @@
+extends ../template/main
+block variables
+    - var title = 'Gallery'
+    block style
+        link(rel="stylesheet" type='text/css' href="static/css/gallery/gallery.min.css")
+block content
+    #task1.my-container
+        .light_g
+            img.main_light_g_img(src='' alt='')
+        .hidden.control_items
+            .light_g_close
+                span Esc
+            .light_g_arrow.next_arrow
+            .light_g_arrow.prev_arrow
+        .height.my-work-row
+            .task_title.accordion_container.accordion_block
+                ul.accordion
+                    li
+                        a.accordion_trigger About Gallery Task
+                        p.accordion_content
+                            | - Simple gallery
+                            br
+                            |- On img click must open gallery with control
+                            br
+                            |- Possibility to select IMG size
+                            br
+                            |- On click &apos;Select&apos; button:
+                            br
+                            span
+                            |- Select IMG
+                            br
+                            span
+                            |- Add overlay on IMG with check icon
+                            br
+                            span
+                            |- IMG Change size.
+                            br
+                            span
+                            |- Change Select to Clear ( on click Clear cancel all )
+                            br
+                            |- On click &apos;Change&apos; button: (Select must be active)
+                            br
+                            span
+                            | - Change all selected img ( based on the selected image size )
+                            br
+                            |-Add possibility to change IMGs amount when swipe range.
+            .set_img_size.input_field
+                .input_field_col.simple_select
+                    label(for='select_img_size') Select img size
+                    select#select_img_size(name='img_size')
+                        option(value='300') 300
+                        option(value='400') 400
+                        option(value='500') 500
+                        option(value='600') 600
+                        option(value='700') 700
+                .input_field_col.range_select
+                    label(for='select_img_amount') Select img amount
+                    input#select_img_amount(type='range' name='range' value='6' min='6' max='60' step='1')
+                    output#rangeValue
+            .click_items
+                .click_item
+                    .click_item_content.rounded
+                        img.my_click(src='' alt='Some Random IMG')
+            .selected_items
+                p
+                    | Selected Items:
+                    span.items_count
+            .buttons
+                button.select_buttons Select
+                button.change Change
+    block script
+    script(src="static/js/components/gallery/gallery.js")
