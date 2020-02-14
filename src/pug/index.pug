@@ -1,8 +1,25 @@
-extends template/main
+extends template/home
 
 block variables
-	- var title = 'Home'
-	block style
-		link(rel="stylesheet" type='text/css' href="static/css/home/home.min.css")
+    - var title = 'Home'
+block style
+    link(rel="stylesheet" type='text/css' href="static/css/home/home.min.css")
 block content
-
+    .home
+        .menu
+            .menu_current_link
+            .menu_info
+                .menu_info_title
+                    h1 Just a simple site to learn:
+                        span(class='txt-rotate', data-speed='2000', data-show=['JavaScript', 'SCSS', 'Pug', 'How to rebuild some html', 'How to work with REST_API', 'How to work with Arrays in JavaScript'])
+                    h2 Some stuff that I create with pure JS, SCSS, HTML
+                .menu_items
+                    include ./modules/menu/items_list
+                .menu_info_enter
+                    .menu_info_enter_title
+                        h4 Enter name or list number like cd ...  and press Enter:
+                    .menu_info_enter_input
+                        span
+                        input(id='enter' autofocus='1')
+block script
+    script(src="static/js/components/home/home.js")

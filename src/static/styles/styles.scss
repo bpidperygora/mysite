@@ -8,16 +8,11 @@ html {
   height: 100%;
 }
 
-body {
-  height: 100%;
-  scroll-behavior: smooth;
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
-}
-
 *,
 *::before,
-*::after { box-sizing: border-box; }
+*::after {
+  box-sizing: border-box;
+}
 
 ul[class],
 ol[class] {
@@ -38,9 +33,13 @@ figure,
 figcaption,
 blockquote,
 dl,
-dd { margin: 0; }
+dd {
+  margin: 0;
+}
 
-a:not([class]) { text-decoration-skip-ink: auto; }
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
 
 img {
   max-width: 100%;
@@ -50,7 +49,9 @@ img {
 input,
 button,
 textarea,
-select { font: inherit; }
+select {
+  font: inherit;
+}
 
 /* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
 @media (prefers-reduced-motion: reduce) {
@@ -68,15 +69,23 @@ iframe,
 img,
 svg,
 video,
-textarea { vertical-align: middle; }
+textarea {
+  vertical-align: middle;
+}
 
-textarea { resize: none; }
+textarea {
+  resize: none;
+}
 
-section { position: relative; }
+section {
+  position: relative;
+}
 
 input,
 select,
-button { outline: none; }
+button {
+  outline: none;
+}
 
 .wrapper {
   display: flex;
@@ -84,128 +93,43 @@ button { outline: none; }
   height: 100%;
 }
 
-.content { flex: 1 0 auto; }
-
-.container {
-  margin: 0 auto;
-  max-width: $content-size;
-  width: 100%;
+@-webkit-keyframes blink-border {
+  50% {
+    border-color: transparent;
+  }
 }
+
 body {
-  color: #000000;
-  font-family: Roboto, sans-serif;
+  color: #2f2f2f;
   font-size: 14px;
   font-stretch: normal;
   font-style: normal;
   letter-spacing: normal;
   line-height: normal;
   margin: 0;
+  height: 100%;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  font-family: 'Inconsolata', monospace;
+  font-weight: normal;
 
-  &.not_move {
-    overflow: hidden;
-  }
-
-  .my-container {
-    position: relative;
-    max-width: 100%;
-  }
-
-  input[type=number]::-webkit-inner-spin-button,
-  input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-
-  .task_title {
-    display: block;
+  .container {
+    margin: 0 auto;
+    max-width: $content-size;
     width: 100%;
-    text-align: center;
-    background: #555555;
-    margin-bottom: 30px;
-    padding: 15px;
 
-    .accordion {
-      color: #fff;
-
-      li {
-        a {
-          &:after {
-            border-right: 1px solid #ffffff;
-            border-bottom: 1px solid #ffffff;
-          }
-        }
-      }
+    .content {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
+}
 
-  .height-500 {
-    min-height: 500px;
-  }
-
-  .height {
-    min-height: 100vh;
-  }
-
-  .my-work-row {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    padding: 0 15px;
-    -ms-flex-line-pack: center;
-    align-content: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-  }
-
-  .border {
-    border: 1px solid;
-  }
-
-  .border-dark {
-    border-color: darkgray;
-  }
-
-  .rounded {
-    border-radius: 2%;
-  }
-
-  .hidden {
-    display: none;
-  }
-
-  .buttons {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-
-    button {
-      background: #555;
-      padding: 10px 15px;
-      width: 200px;
-      display: inline-block;
-      text-align: center;
-      color: #fff;
-      font-size: 22px;
-      border-radius: 7px;
-      cursor: pointer;
-      transition: background .4s;
-      margin: 10px;
-      border: 0px;
-      &:focus{
-        outline: none;
-      }
-      &:hover, &.active {
-        border: 1px solid orange;
-        background: #382400;
-        margin: 9px 10px;
-      }
-    }
-  }
+::selection {
+  background: #0080FF;
+  text-shadow: none;
 }
 
 *, ::after, ::before {
