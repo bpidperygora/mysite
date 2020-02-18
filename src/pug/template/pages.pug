@@ -13,19 +13,19 @@ html(lang="en-EN")
         meta(name="keywords" content="")
         link(rel="stylesheet" type='text/css' href="static/css/styles.min.css")
         link(rel="stylesheet" type='text/css' href="static/css/menu/menu.min.css")
+        link(rel="stylesheet" type='text/css' href="static/css/accordion/accordion.min.css")
         block style
 
     <!--[if lt IE 9]>
     script(src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js")
     <![endif]-->
     body
-        .container
-            include ../modules/header/header
-            .content
-                block content
-            include ../modules/footer/footer
+        include ../modules/header/header
+        block content
+        include ../modules/footer/footer
         script(src="static/js/jquery-3.3.1.min.js")
         script(src="static/js/libs.min.js")
         script(src="static/js/components/menu/menu.js")
+        script(src="static/js/components/accordion/accordion.js")
         script(src="static/js/main.js")
         block script

@@ -1,7 +1,7 @@
 let accordionBlock = document.querySelectorAll('.accordion_block');
-console.log(accordionBlock);
 for (let a = 0; a < accordionBlock.length; a++) {
     accordionBlock[a].addEventListener('click', function (ev) {
+        console.log(ev.target);
         let accordionItems = ev.target.parentNode.children;
         if (ev.target.className.indexOf('accordion_item') >= 0) {
             if (ev.target.parentNode.className.indexOf('accordion') >= 0) {

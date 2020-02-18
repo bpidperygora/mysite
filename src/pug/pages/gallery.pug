@@ -1,10 +1,10 @@
 extends ../template/pages
 block variables
     - var title = 'Gallery'
-    block style
-        link(rel="stylesheet" type='text/css' href="static/css/gallery/gallery.min.css")
+block style
+    link(rel="stylesheet" type='text/css' href="static/css/gallery/gallery.min.css")
 block content
-    #task1.my-container
+    #task1.container
         .light_g
             img.main_light_g_img(src='' alt='')
         .hidden.control_items
@@ -15,7 +15,7 @@ block content
         .height.my-work-row
             .task_title.accordion_container.accordion_block
                 ul.accordion
-                    li
+                    li.accordion_item
                         a.accordion_trigger About Gallery Task
                         p.accordion_content
                             | - Simple gallery

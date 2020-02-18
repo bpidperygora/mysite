@@ -1,7 +1,8 @@
 .menu {
   display: block;
   position: relative;
-  width: 100%;
+  width: 1140px;
+  max-width: 100%;
   overflow: hidden;
   color: black;
   border-left: 15px solid ;
@@ -12,6 +13,7 @@
     width: 100%;
     padding: 15px;
     background: black;
+    box-shadow: 0 -1px 2px 1px white;
     p{
       font-size: 1rem;
     }
@@ -111,6 +113,7 @@
     justify-content: flex-start;
     width: 100%;
     height: calc(100% - 115px);
+    min-height: 100px;
     overflow-x: auto;
     .menu_item {
       width: 100%;
@@ -142,10 +145,11 @@
     justify-content: flex-end;
     align-content: flex-start;
     border-top: 1px solid #C8C8C8;
+    overflow: hidden;
     &_title{
+      margin-bottom: 1rem;
       h4{
         font-weight: 400;
-        margin-bottom: 1rem;
       }
     }
     &_input{

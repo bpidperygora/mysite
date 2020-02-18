@@ -100,6 +100,8 @@ button {
 }
 
 body {
+  position: relative;
+  overflow-x: hidden;
   color: #2f2f2f;
   font-size: 14px;
   font-stretch: normal;
@@ -117,13 +119,10 @@ body {
     margin: 0 auto;
     max-width: $content-size;
     width: 100%;
-
-    .content {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+    padding: 50px 0;
+  }
+  .hidden{
+    display: none;
   }
 }
 
