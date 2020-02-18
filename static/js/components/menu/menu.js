@@ -59,14 +59,17 @@ input.addEventListener("keyup", function (event) {
 
 var header = document.getElementsByTagName('header')[0];
 var menuButton = document.getElementsByClassName('menu_button')[0];
-menuButton.addEventListener('click', function () {
-  header.classList.toggle('show');
-  this.classList.toggle('show_terminal');
-  this.classList.toggle('terminal_visible');
 
-  if (this.classList.contains('show_terminal')) {
-    this.innerHTML = 'Show Terminal';
-  } else {
-    this.innerHTML = 'Hide Terminal';
-  }
-});
+if (menuButton) {
+  menuButton.addEventListener('click', function () {
+    header.classList.toggle('show');
+    this.classList.toggle('show_terminal');
+    this.classList.toggle('terminal_visible');
+
+    if (this.classList.contains('show_terminal')) {
+      this.innerHTML = 'Show Terminal';
+    } else {
+      this.innerHTML = 'Hide Terminal';
+    }
+  });
+}
