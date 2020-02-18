@@ -1,10 +1,10 @@
 "use strict";
 
 var accordionBlock = document.querySelectorAll('.accordion_block');
-console.log(accordionBlock);
 
 for (var a = 0; a < accordionBlock.length; a++) {
   accordionBlock[a].addEventListener('click', function (ev) {
+    console.log(ev.target);
     var accordionItems = ev.target.parentNode.children;
 
     if (ev.target.className.indexOf('accordion_item') >= 0) {
