@@ -32,8 +32,7 @@ input.addEventListener("keyup", function (event) {
                 window.location = a.href;
                 correct = true;
                 break;
-            }
-            else if ('cd ' + a.innerText.toLowerCase() === currentValue) {
+            } else if ('cd ' + a.innerText.toLowerCase() === currentValue) {
                 window.location = a.href;
                 correct = true;
                 break;
@@ -44,7 +43,7 @@ input.addEventListener("keyup", function (event) {
         let messageBlock = document.querySelector('.menu_info_enter_title');
         if (!correct) {
             if (currentValue.indexOf('cd ') < 0) {
-                    messageBlock.innerHTML = '<h4>Error! There is no "cd + ..." in input<h4>'
+                messageBlock.innerHTML = '<h4>Error! There is no "cd + ..." in input<h4>'
             } else {
                 if (messageBlock.classList.contains('error')) {
                     messageBlock.innerHTML = messageBlock.innerHTML + '<br><h4> Error! no such item (' + currentValue + ') in list. Try again</h4>';
@@ -62,13 +61,15 @@ input.addEventListener("keyup", function (event) {
 
 let header = document.getElementsByTagName('header')[0];
 let menuButton = document.getElementsByClassName('menu_button')[0];
-menuButton.addEventListener('click', function () {
-    header.classList.toggle('show');
-    this.classList.toggle('show_terminal');
-    this.classList.toggle('terminal_visible');
-    if (this.classList.contains('show_terminal')){
-        this.innerHTML = 'Show Terminal'
-    } else {
-        this.innerHTML = 'Hide Terminal'
-    }
-});
+if (menuButton) {
+    menuButton.addEventListener('click', function () {
+        header.classList.toggle('show');
+        this.classList.toggle('show_terminal');
+        this.classList.toggle('terminal_visible');
+        if (this.classList.contains('show_terminal')) {
+            this.innerHTML = 'Show Terminal'
+        } else {
+            this.innerHTML = 'Hide Terminal'
+        }
+    });
+}

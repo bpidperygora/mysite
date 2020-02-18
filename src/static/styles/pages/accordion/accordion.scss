@@ -58,7 +58,7 @@
         }
       }
 
-      a {
+      .accordion_trigger {
         pointer-events: none;
         width: 100%;
         display: block;
@@ -69,6 +69,7 @@
         transition: .5s;
 
         &.active {
+          margin-bottom: 20px;
           &:after {
             transform: rotate(45deg);
             transition: all 0.2s ease-in-out;
@@ -87,6 +88,8 @@
           transform: rotate(-45deg);
           transition: all 0.2s ease-in-out;
           border-radius: 2.5px;
+          z-index: -1;
+          opacity: .8;
         }
       }
 

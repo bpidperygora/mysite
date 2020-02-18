@@ -33,7 +33,7 @@ module.exports = function () {
             }));
     });
     $.gulp.task('js:build', () => {
-        return $.gulp.src([scriptsPATH.input + '**/*.js',
+        return $.gulp.src([scriptsPATH.input + '**/*.js', './src/static/for_live/*.js',
             '!' + scriptsPATH.input + 'libs.min.js'])
             .pipe(babel({
                 presets: ['@babel/env']
